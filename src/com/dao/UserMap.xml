@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.UserMap">
+	
+
+	<insert id="userAdd" parameterType="com.po.User">
+		insert into user(userName,password)value(#{userName},#{password})
+	</insert>
+	
+
+	<select id="checkId" resultType="com.po.User" parameterType="com.po.User">
+		select * from user where userName=#{userName} and password=#{password}
+	</select>
+	
+	<select id="checkUser" resultType="com.po.User">
+		select * from user
+	</select>
+	<select id="checkUser1" resultType="com.po.User">
+	select * from user where id=#{id}
+	</select>
+</mapper>

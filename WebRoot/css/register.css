@@ -1,0 +1,14 @@
+.p_left{float:left;}
+.p_right{float:left;padding-bottom:0px;}
+.clear{ clear:both}
+
+#beijing{
+height:100%;
+width:100%;
+background:url(img/timg.jpg) no-repeat center 0;
+background-size:100% 100%;
+}
+
+
+
+

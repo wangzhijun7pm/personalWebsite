@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.LogTableMap">
+	<insert id="addLog" parameterType="com.po.LogTable" >
+
+		insert into logtable (rizhiName,rizhiContent ,userId,rizhiTime)value(#{rizhiName},#{rizhiContent},#{userId},#{rizhiTime})
+	</insert>
+	<select id="listLog" resultType="com.po.LogTable">
+	select * from logtable 
+	</select>
+	
+	<select id="checkLog" parameterType="int" resultType="com.po.LogTable">
+	select * from logtable where id=#{id}
+	</select>
+	
+</mapper>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.UserMaterialMap">
+	<insert id="UserMaterialAdd" parameterType="com.po.UserMaterial">
+	insert into usermaterial (nickname ,sex,birthday,bloodType,hobby,profession,hometown,school,company,cellphone,mailbox,personalizedSignature,personalDescription,userid )
+	value(#{nickname},#{sex},#{birthday},#{bloodType},#{hobby},#{profession},#{hometown},#{school},#{company},#{cellphone},#{mailbox},#{personalizedSignature},#{personalDescription},#{userid})
+	</insert>
+	
+	<select id="selectUserMaterial" parameterType="int" resultType="com.po.UserMaterial">
+	select * from usermaterial where userid=#{id}
+	</select>
+	
+	<select id="selectMaterial" resultType="com.po.UserMaterial">
+	select * from usermaterial 
+	</select>
+</mapper>

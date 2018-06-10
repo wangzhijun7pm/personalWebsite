@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"    
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dao.PhotoMap">
+	<insert id="addPhoto" parameterType="com.po.Photo">
+		insert into photo(Xiangce,userId)value(#{xiangce},#{userId})
+	</insert>
+	
+	<select id="selectPhoto"  resultType="com.po.Photo">
+	select * from photo where userid=#{0}  limit #{1} offset #{2}
+	</select>
+	
+	<select id="selectUserXiangce" parameterType="int" resultType="int">
+	select count(1) from photo where userId=#{userid}
+	</select>
+	
+	<select id="selectPhoto1" parameterType="int" resultType="com.po.Photo">
+	select * from photo where userid=#{userid}
+	</select>
+</mapper>
